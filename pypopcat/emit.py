@@ -14,6 +14,7 @@ def emit_clicks(
     rate_limit: float,
     limit: Optional[int] = None,
     country: str = 'TW',
+    worker_id: int = 1,
 ):
     '''emit clicks
 
@@ -22,6 +23,7 @@ def emit_clicks(
         rate_limit (float): rate limit
         limit (int): total number of clicks. optional
         country (str): country code
+        worker_id (int): worker id
     '''
     options = webdriver.ChromeOptions()
     options.add_argument('--mute-audio')
@@ -39,7 +41,7 @@ def emit_clicks(
         actions.click(app)
         actions.perform()
         i += 1
-        logger.info("Click Stats: %s", i)
+        logger.info("Worker: %s, Click Stats: %s", worker_id, i)
         time.sleep(rate_limit)
 
         if limit and i >= limit:

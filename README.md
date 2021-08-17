@@ -6,6 +6,7 @@ Taiwan NO.1 !!!
 ## Screenshots
 
 ![Demo](./img/screenshot.png)
+![MultiWindows](./img/multi_windows.png)
 
 ## Prerequisites
 
@@ -21,5 +22,5 @@ poetry install
 ## Usage
 
 ```bash
-poetry run pypopcat emit
+poetry run pypopcat emit --n_thread 1 --country TW
 ```
