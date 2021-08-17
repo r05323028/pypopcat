@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "pypopcat"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+selenium = "^3.141.0"
+rich = "^10.7.0"
+click = "^8.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+yapf = "^0.31.0"
+pylint = "^2.9.6"
+isort = "^5.9.3"
+
+[tool.poetry.scripts]
+pypopcat = "pypopcat.cmd:cli"
+
+[tool.isort]
+profile = "hug"
+src_paths = ["pypopcat", "tests"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
