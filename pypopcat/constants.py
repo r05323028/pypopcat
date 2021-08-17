@@ -1,2 +1,2 @@
-RATE_LIMIT = 30 / 800
+RATE_LIMIT = 0.0375
 HOST = 'https://popcat.click'
