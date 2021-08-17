@@ -10,7 +10,7 @@ Taiwan NO.1 !!!
 
 ## Prerequisites
 
-- Download [Chrome dirver](https://chromedriver.chromium.org/)
+- Download [Chrome driver](https://chromedriver.chromium.org/) based on your OS.
 - Move the driver to folders in `PATH` such as `/usr/local/bin`, `/usr/bin`.
 
 ## Installation
