@@ -22,5 +22,5 @@ poetry install
 ## Usage
 
 ```bash
-poetry run pypopcat emit --n_thread 1 --country TW
+poetry run pypopcat emit --n_threads 1 --country TW
 ```
