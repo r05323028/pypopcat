@@ -1,10 +1,13 @@
 import concurrent.futures
-import os
+import logging
 
 import click
 
 from pypopcat.constants import HOST, RATE_LIMIT
 from pypopcat.emit import emit_clicks
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 @click.group()
@@ -25,7 +28,7 @@ def emit(limit, country, n_threads, proxy_server):
     '''
     with concurrent.futures.ThreadPoolExecutor(
             max_workers=n_threads) as executor:
-        futures = {
+        futures = [
             executor.submit(
                 emit_clicks,
                 HOST,
@@ -34,9 +37,23 @@ def emit(limit, country, n_threads, proxy_server):
                 country,
                 worker_id=i,
                 proxy_server=proxy_server,
-            )
-            for i in range(n_threads)
-        }
+            ) for i in range(n_threads)
+        ]
+
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                count = future.result()
+            except Exception:
+                logger.error(
+                    "Uncompleted future: %s",
+                    future,
+                )
+            else:
+                logger.info(
+                    "Completed future: %s, emit %s times",
+                    future,
+                    count,
+                )
 
 
 cli.add_command(emit)

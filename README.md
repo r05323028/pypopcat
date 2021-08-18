@@ -1,4 +1,3 @@
-
 # <p align='center'><img width="32px" height="32px" src="https://popcat.click/img/op.353767c3.png" />PyPopcat</p>
 
 Taiwan NO.1 !!!
@@ -24,3 +23,7 @@ poetry install
 ```bash
 poetry run pypopcat emit --n_threads 1 --country TW
 ```
+
+## Notes
+
+According popcat's rules, you can't exceed 800 clicks every 30s. You need to adjust `n_threads` due to worker's pps.
