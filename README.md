@@ -2,6 +2,11 @@
 
 Taiwan NO.1 !!!
 
+## Features
+
+- drive multiple Chrome windows to click by multithreading.
+- use TOR proxy to prevent to be blocked by API rate limit (WIP)
+
 ## Screenshots
 
 ![Demo](./img/screenshot.png)
