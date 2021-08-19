@@ -31,4 +31,4 @@ poetry run pypopcat emit --n_threads 1 --country TW
 
 ## Notes
 
-According popcat's rules, you can't exceed 800 clicks every 30s. You need to adjust `n_threads` due to worker's pps.
+According to popcat's rules, you can't exceed 800 clicks every 30s. You need to adjust `n_threads` due to worker's pps.
