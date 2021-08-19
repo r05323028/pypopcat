@@ -4,8 +4,8 @@ Taiwan NO.1 !!!
 
 ## Features
 
-- drive multiple Chrome windows to click by multithreading.
-- use TOR proxy to prevent to be blocked by API rate limit (WIP)
+- Drive multiple Chrome windows to click by multithreading.
+- Use HAProxy + TOR to prevent to be blocked by API rate limit
 
 ## Screenshots
 
@@ -27,6 +27,20 @@ poetry install
 
 ```bash
 poetry run pypopcat emit --n_threads 1 --country TW
+```
+
+### Use proxy
+
+Open haproxy service by docker
+
+```bash
+docker run -d -p 5566:5566 -p 4444:4444 --env tors=25 mattes/rotating-proxy
+```
+
+And run command to pop clicks by selenium
+
+```bash
+poetry run pypopcat emit --n_threads 5 --country TW --proxy_server=http://localhost:5566
 ```
 
 ## Notes
